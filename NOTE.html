@@ -1,0 +1,37 @@
+NG localhost:4200 Lara http://127.0.0.1:8000
+
+Angular e Laravel:Creare un’API con Laravel
+API sta per Application Program Interface . In poche parole, un’API è un’interfaccia che si utilizza per comunicare con
+le applicazioni.
+
+L’API agisce proprio come un middleware . Quando inviamo richieste a un’API, essa controlla le richieste. Se le
+richieste sono consentite, i dati verranno restituiti. Vengono restituite anche risposte adeguate per farci conoscere il
+risultato delle nostre richieste.
+
+Utilizzando le API, possiamo creare efficacemente un servizio di backend che supporta molti tipi di applicazioni. Gli
+sviluppatori possono cambiare frequentemente l’aspetto delle loro app senza preoccuparsi di rompere le app.
+
+Laravel: le REST API
+REST sta per Representational State Transfer . È uno stile di architettura web. Fondamentalmente, REST è solo un insieme
+di accordi e vincoli su come i componenti dovrebbero lavorare insieme.
+
+Quando le API utilizzano l’architettura REST, vengono chiamate REST API ( note anche come RESTful APIs).
+
+Una tipica REST API ha i seguenti vincoli :
+
+Client – server : server (back end) e client (front end) possono essere sviluppati indipendentemente.
+Stateless : lo stato della sessione deve essere archiviato sul client. I dati del client non devono essere archiviati
+sul server tra le richieste.
+Memorizzabile nella cache: il client può memorizzare nella cache le risposte per migliorare la scalabilità e le
+prestazioni.
+La REST API utilizza le richieste HTTP per comunicare con i server. Ogni richiesta specifica un certo verbo HTTP
+nell’intestazione della richiesta,
+
+php artisan make:controller UserController --resource (crea controller)
+php artisan route:list
+
+LE ROUTES
+Laravel ha una funzionalità chiamata middleware groups . Quando inserisci le rotte nel file web.php , egli applica il
+web middleware group a tutte le rotte.
+
+Ogni rotta deve essere collegata al proprio controller use App\Http\Controllers\UserController;
