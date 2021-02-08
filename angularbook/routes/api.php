@@ -18,5 +18,9 @@ use App\Http\Controllers\UserController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::resource('users', UserController::class);
+
+// * gruppo per creare altri endpoint (api) tramite prefgisso
+Route::group(['prefix' => 'v1'], function(){
+    Route::resource('users', UserController::class);
+});
 
