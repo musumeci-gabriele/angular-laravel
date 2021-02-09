@@ -39,3 +39,18 @@ Ogni rotta deve essere collegata al proprio controller use App\Http\Controllers\
 CORS sta per Cross-Origin Resource Sharing ,  è un sistema che consente ai browser moderni di inviare e ricevere dati limitati (immagini, caratteri, file, ecc.)
 da un dominio diverso da quello che effettua la richiesta.
 In poche parole, se non abilitiamo CORS , non possiamo accedere alla nostra API da altre applicazioni
+Per attivare il CORS php artisan make:middleware Cors, ora aprite il file app / Http / Kernel.php e aggiungiamo il collegamento
+Gli EndPoint per bestpractice devo essere interrogati da un servizio.
+
+Ci sono due modi che possiamo usare per scrivere un modulo in Angular:
+
+Template-driven —Basato sui modelli : come suggerisce il nome, costruiremo i nostri moduli principalmente nei nostri modelli. Questo metodo è adatto per moduli semplici che richiedono una semplice convalida.
+Code-driven : questo è un metodo nuovo ma potente che possiamo usare per costruire forme reattive. Creeremo moduli direttamente nel nostro componente.
+Angular:Convalidare il modulo
+Nel modulo basato sul codice(code-driven) , utilizziamo un Validator per convalidare il nostro modulo. Ecco alcune regole di convalida fornite per impostazione predefinita:
+
+Validators.required : il controllo non deve essere vuoto.
+Validators.minLength (numero) : il controllo deve contenere almeno un numero di caratteri.
+Validators.maxLength (numero) : il controllo deve contenere al massimo il numero di caratteri.
+Validators.pattern (pattern) : il controllo deve corrispondere al pattern dell’espressione regolare .
+Per utilizzare Validator , dobbiamo prima importarlo.

@@ -19,8 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// * gruppo per creare altri endpoint (api) tramite prefgisso
-Route::group(['prefix' => 'v1'], function(){
+// * gruppo per creare altri endpoint (api) tramite prefgisso + CORS (chiave+valore)
+Route::group(['prefix' => 'v1', 'middleware' => 'cors'], function(){
     Route::resource('users', UserController::class);
 });
 

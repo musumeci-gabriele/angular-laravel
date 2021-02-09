@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Response;
+
 
 
 class UserController extends Controller
@@ -36,9 +38,31 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+{
+    if ((!$request->email) || (!$request->name) || (!$request->password)) {
+
+        $response = Response::json([
+            'message' => 'Please enter all required fields'
+        ], 422);
+        return $response;
     }
+
+    $user = new User(array(
+        'email' => trim($request->email),
+        'name' => trim($request->name),
+        'password' => bcrypt($request->password),
+    ));
+    $user->save();
+
+    $message = 'The user has been created successfully';
+
+    $response = Response::json([
+        'message' => $message,
+        'data' => $user,
+    ], 201);
+
+    return $response;
+}
 
     /**
      * Display the specified resource.

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import {AboutComponent} from './components/about/about.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {HomeComponent} from './components/home/home.component';
+import {adminRoutes} from './admin/admin.routes';
+import {DashboardComponent} from './admin/dashboard.component';
+
 
 // * NOTA: L’API agisce proprio come un middleware . Quando inviamo richieste a un’API, essa controlla le richieste. Se le richieste sono consentite, i dati verranno restituiti. Vengono restituite anche risposte adeguate per farci conoscere il risultato delle nostre richieste.
 
@@ -14,8 +16,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
+  { path: 'admin', component: DashboardComponent, children: adminRoutes}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

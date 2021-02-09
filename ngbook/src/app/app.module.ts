@@ -9,6 +9,13 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HomeAdminComponent } from './admin/home-admin/home-admin.component';
 import { ListAdminComponent } from './admin/list-admin/list-admin.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+// * abilitiamo il servizio HTTP
+import {HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './admin/dashboard.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AdminUserCreateComponent } from './admin/admin-user-create/admin-user-create.component';
+
+
 
 @NgModule({
   declarations: [
@@ -18,11 +25,16 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     ContactComponent,
     HomeAdminComponent,
     ListAdminComponent,
-    NavbarComponent
+    NavbarComponent,
+    DashboardComponent,
+    AdminUserCreateComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
